@@ -1,6 +1,8 @@
-# WebpackBin project
+# Weather App
 
 ## Start
+
+ Clone this repository
 
 `npm install`
 
