@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Weather App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,700,400' rel='stylesheet' type='text/css'>
+        <style>
+        body {
+        font-family: 'Roboto';
+        }
+        .pure-u-1 {
+        height: 100vh;
+        background-color: #edeaea;
+        }
+        .card {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+        }
+        .card h1, .card h2, .card h3, .card p, .card h4 {
+        text-align: center;
+        margin: auto;
+        ;
+        }
+        .card-header {
+        margin: 0 0 3% 0;
+        }
+        .card-content h2, .card-content h3, .card-content p {
+        margin-bottom: 5%;
+        }
+        .card-image {
+        display: flex;
+        }
+        .card-image img {
+        max-width: 33%;
+        margin: auto;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="pure-g" id="app">
+            <div class="pure-u-1">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://image.flaticon.com/icons/svg/106/106064.svg" v-show="isClouds(data)">
+                        <img src="https://image.flaticon.com/icons/svg/106/106044.svg" v-show="isRain(data)">
+                        <img src="https://image.flaticon.com/icons/svg/106/106059.svg" v-show="isDrizzle(data)">
+                        <img src="https://image.flaticon.com/icons/svg/106/106043.svg" v-show="isSnow(data)">
+                        <img src="https://image.flaticon.com/icons/svg/106/106052.svg" v-show="isClear(data)">
+                        <img src="https://image.flaticon.com/icons/svg/106/106040.svg" v-show="isThunderstorm(data)">
+                    </div>
+                    <div class="card-header">
+                       <h1>{{ data.main.temp }} °</h1>
+                    </div>
+                    <div class="card-content">
+                        <h3>{{ data.weather[0].main }}</h3>
+                        <p>{{ data.name }}, {{ data.sys.country }}</p>
+                        <h4>{{ data.weather[0].description }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

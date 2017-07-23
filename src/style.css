@@ -1,0 +1,13 @@
+body {
+  font-family: 'Roboto';
+}
+
+.card {
+	display: flex;
+	width: 50%;
+}
+
+.card h1, .card h2, .card h3, .card p {
+	text-align: center;
+	margin: auto;
+}
